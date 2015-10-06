@@ -4,9 +4,10 @@
 using namespace std;
 
 void solve(int ctcars, int cttracks, int cars[]) {
-	int inorder[2000] = { -1 }, outorder[2000], trackidx = 0, tracklast[2000] = { 0 };
+	int inorder[2000], outorder[2000], trackidx = 0, tracklast[2000] = { 0 };
 
 	for (int i = 0; i < ctcars; i++) {
+		inorder[i] = -1;
 		for (int j = 0; j < trackidx; j++) {
 			if (tracklast[j] == cars[i] - 1) {
 				inorder[i] = j;
